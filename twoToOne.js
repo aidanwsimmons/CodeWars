@@ -9,7 +9,7 @@ function longest(s1, s2) {
     })
     arr2.forEach(letter => {
       if(result.indexOf(letter) === -1){
-        result += letter
+        result += letter 
       }
     })
     return result.split('').sort((a, b) => a.charCodeAt(0) - b.charCodeAt(0)).join('')
