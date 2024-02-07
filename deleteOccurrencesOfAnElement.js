@@ -23,3 +23,11 @@ function deleteNth(arr,n){
     })
     return result
   }
+
+  function filterDeleteNth(arr, n){
+    let numMap = {}
+    return arr.filter((num) => {
+        numMap[num] = (numMap[num] || 0) + 1
+        return numMap[num] <= n
+    })
+  }
