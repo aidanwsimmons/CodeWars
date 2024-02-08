@@ -46,3 +46,18 @@ function humanReadable (seconds) {
     
     return `${hours}:${minutes}:${seconds}`
   }
+
+  function humanReadableRefactor (seconds) {
+    //60 seconds in a minute
+    //60 minutes in an hour === 3600 seconds in an hour
+    let hours, minutes;
+    hours = Math.floor(seconds / 3600);
+    seconds = seconds % 3600;
+    minutes = Math.floor(seconds / 60);
+    seconds = seconds % 60;
+    
+    function pad(num){
+        return (num < 10) ? '0' + num : num.toString();
+    }
+    return pad(hours) + ':' + pad(minutes) + ':' + pad(seconds);
+  }
